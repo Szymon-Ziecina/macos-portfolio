@@ -3,6 +3,10 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import localFont from "next/font/local";
 import "../globals.css";
+import { cn } from "@/lib/utils";
+import Background from "@/components/Background";
+import MobileView from "@/components/MobileView";
+import Navbar from "@/components/interface/Navbar";
 
 const sfPro = localFont({
   src: "../fonts/SFPro.woff",
@@ -20,14 +24,21 @@ export default async function LocaleLayout({
   params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: { locale: "en" | "pl" };
 }) {
   const messages = await getMessages();
   return (
-    <html lang="en">
-      <body className={`${sfPro} antialiased`}>
+    <html lang={locale}>
+      <body className={cn(sfPro, "antialiased")}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <div className="relative h-screen w-screen">
+            {/* <MobileView /> */}
+            <main className="relative flex flex-col h-full z-10">
+              <Navbar variant="lockScreen" locale={locale} />
+              {children}
+            </main>
+            <Background />
+          </div>
         </NextIntlClientProvider>
       </body>
     </html>
