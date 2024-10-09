@@ -8,3 +8,5 @@ export const wallpapersList = [
     src: "Sequoia_dark.jpg",
   },
 ];
+
+export const navItems = ["File", "Edit", "View", "Go", "Window", "Help"];

@@ -21,10 +21,10 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params: { locale, app },
 }: {
   children: React.ReactNode;
-  params: { locale: "en" | "pl" };
+  params: { locale: "en" | "pl"; app: string };
 }) {
   const messages = await getMessages();
   return (
@@ -34,7 +34,7 @@ export default async function LocaleLayout({
           <div className="relative h-screen w-screen">
             {/* <MobileView /> */}
             <main className="relative flex flex-col h-full z-10">
-              <Navbar variant="lockScreen" locale={locale} />
+              <Navbar locale={locale} app={app} />
               {children}
             </main>
             <Background />

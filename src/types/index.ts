@@ -3,14 +3,22 @@ export enum WallpaperTypes {
   SEQUOIA_DARK = "Sequoia_dark.jpg",
 }
 
+export interface NavbarProps {
+  locale: "en" | "pl";
+  app: string;
+}
+
 export interface ClockProps {
   variant: "big" | "small";
   locale?: "en" | "pl";
 }
 
-export interface NavbarProps {
-  variant: "lockScreen" | "homeScreen";
-  locale: string;
+export interface timeProps {
+  day: string;
+  month: string;
+  date: number;
+  hour: number;
+  minute: number;
 }
 
 export interface LoginFormProps {
