@@ -24,7 +24,7 @@ const Clock = ({ variant, locale }: ClockProps) => {
 
 const BigClock = ({ time }: { time: timeProps }) => {
   return (
-    <p className="text-4xl font-semibold text-white/70 text-center">
+    <p className="text-4xl sf-rounded font-semibold text-white/70 text-center">
       {time.day}, {time.month} {time.date}
       <br />
       <span className="text-8xl font-extrabold">
@@ -36,7 +36,7 @@ const BigClock = ({ time }: { time: timeProps }) => {
 
 const SmallClock = ({ time }: { time: timeProps }) => {
   return (
-    <p className="text-base text-black text-center">
+    <p className="text-base sf-rounded text-black text-center">
       {time.day.slice(0, 3)}, {time.month.slice(0, 3)} {time.date} &nbsp;{" "}
       {time.hour}:{time.minute.toString().padStart(2, "0")}
     </p>

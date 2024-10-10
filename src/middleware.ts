@@ -4,10 +4,9 @@ import { routing } from "./i18n/routing";
 export default createMiddleware(routing);
 
 export const config = {
-  // Match only internationalized pathnames
   matcher: [
     "/",
     "/(pl|en)/:path*",
-    "/((?!_next/static|wallpapers|favicon.ico).*)",
+    "/((?!_next/static|favicon.ico|.*\\..*).*)", // Exclude all static files in public (like /icons, /images, etc.)
   ],
 };

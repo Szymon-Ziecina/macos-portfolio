@@ -1,11 +1,10 @@
 export enum WallpaperTypes {
-  SEQUOIA_LIGHT = "Sequoia_light.jpg",
-  SEQUOIA_DARK = "Sequoia_dark.jpg",
+  SEQUOIA_LIGHT = "/wallpapers/Sequoia_light.jpg",
+  SEQUOIA_DARK = "/wallpapers/Sequoia_dark.jpg",
 }
 
 export interface NavbarProps {
   locale: "en" | "pl";
-  app: string;
 }
 
 export interface ClockProps {
@@ -21,9 +20,10 @@ export interface timeProps {
   minute: number;
 }
 
-export interface LoginFormProps {
+export interface LoginPageProps {
   name: string | undefined;
   avatar: string | undefined;
+  locale: "en" | "pl";
 }
 
 export type GithubUserType = {
@@ -42,3 +42,10 @@ export type GithubUserType = {
   followers: number;
   following: number;
 };
+
+export interface AppIconProps {
+  name: string;
+  src: string;
+}
+
+export type AppProps = string | undefined;

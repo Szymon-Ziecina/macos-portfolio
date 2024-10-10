@@ -68,3 +68,20 @@ export const getCurrentTime = (locale: "en" | "pl" = "en") => {
 
   return { day, month, date, hour, minute };
 };
+
+declare global {
+  interface String {
+    capitalize(): string;
+  }
+}
+
+// Implement the method on String.prototype
+String.prototype.capitalize = function (): string {
+  return this.toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+};
+
+// Export an empty object to ensure this file is treated as a module
+export {};

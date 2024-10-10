@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import Background from "@/components/Background";
 import MobileView from "@/components/MobileView";
 import Navbar from "@/components/interface/Navbar";
+import { AppProps } from "@/types";
 
 const sfPro = localFont({
   src: "../fonts/SFPro.woff",
@@ -21,10 +22,10 @@ export const metadata: Metadata = {
 
 export default async function LocaleLayout({
   children,
-  params: { locale, app },
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { locale: "en" | "pl"; app: string };
+  params: { locale: "en" | "pl" };
 }) {
   const messages = await getMessages();
   return (
@@ -32,9 +33,9 @@ export default async function LocaleLayout({
       <body className={cn(sfPro, "antialiased")}>
         <NextIntlClientProvider messages={messages}>
           <div className="relative h-screen w-screen">
-            {/* <MobileView /> */}
-            <main className="relative flex flex-col h-full z-10">
-              <Navbar locale={locale} app={app} />
+            <MobileView />
+            <main className="hidden relative md:flex flex-col h-full z-10">
+              <Navbar />
               {children}
             </main>
             <Background />

@@ -8,7 +8,7 @@ const Background = () => {
 
   return (
     <Image
-      src={`/wallpapers/${wallpaper}`}
+      src={wallpaper}
       alt="Background"
       fill
       quality={100}
