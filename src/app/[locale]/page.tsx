@@ -1,5 +1,4 @@
 import React from "react";
-import Clock from "@/components/widgets/Clock";
 import LoginPage from "@/components/LoginPage";
 import { fetchGithubUser } from "@/lib/actions/user.action";
 

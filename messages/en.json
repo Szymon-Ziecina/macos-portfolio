@@ -1,5 +1,16 @@
 {
   "LoginPage": {
-    "loginPlaceholder": "Enter Password"
+    "loginPlaceholder": "Enter Password",
+    "passwordInfo": "Password is not required. Just press enter."
+  },
+  "AboutMe": {
+    "title": "About Me",
+    "aboutMe": "I’m a full-stack developer based in Kraków, Poland, currently studying at Zespół Szkół Łączności. My focus is on building web applications using Next.js or MERN stack with TypeSctipt. I enjoy working across both frontend and backend development, and most of my projects are solo efforts, though I collaborate when the opportunity arises.My approach to learning is hands-on: I start with the basics, build simple projects, and gradually tackle more complex topics. I keep up with the latest developments by tracking topics that interest me and continuously refining my skills. Problem-solving is a key strength of mine, and I’m dedicated to delivering effective and efficient solutions in my work. Outside of coding, I’m passionate about snowboarding, enduro, and motorsport. These interests help me stay active and bring balance to my routine."
+  },
+  "Terminal": {
+    "help": "Available commands:\nopen [app name] - opens a specific app \nskills - shows my skills \nprojects - shows my projects \nclear - clears the terminal",
+    "skills": "My skills: React, Next.js, TypeScript, Node.js",
+    "projects": "List of projects:\n1. Portfolio MacOS\n2. Project Management App",
+    "notFound": "Command not found. Try help."
   }
 }

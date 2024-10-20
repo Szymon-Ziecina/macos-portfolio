@@ -7,6 +7,6 @@ export const config = {
   matcher: [
     "/",
     "/(pl|en)/:path*",
-    "/((?!_next/static|favicon.ico|.*\\..*).*)", // Exclude all static files in public (like /icons, /images, etc.)
+    "/((?!_next/static|favicon.ico|.*\\..*).*)",
   ],
 };

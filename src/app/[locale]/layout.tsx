@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils";
 import Background from "@/components/Background";
 import MobileView from "@/components/MobileView";
 import Navbar from "@/components/interface/Navbar";
-import { AppProps } from "@/types";
 
 const sfPro = localFont({
   src: "../fonts/SFPro.woff",
@@ -34,7 +33,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <div className="relative h-screen w-screen">
             <MobileView />
-            <main className="hidden relative md:flex flex-col h-full z-10">
+            <main className="hidden relative lg:flex flex-col h-full z-10">
               <Navbar />
               {children}
             </main>

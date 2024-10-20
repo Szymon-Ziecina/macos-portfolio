@@ -1,5 +1,16 @@
 {
   "LoginPage": {
-    "loginPlaceholder": "Podaj Hasło"
+    "loginPlaceholder": "Podaj Hasło",
+    "passwordInfo": "Hasło nie jest wymagane. Po prostu wcisnij enter."
+  },
+  "AboutMe": {
+    "title": "O mnie",
+    "aboutMe": "Jestem full-stack developerem z Krakowa, obecnie uczę się w Zespole Szkół Łączności. Skupiam się na tworzeniu aplikacji webowych, korzystając z Next.js lub MERN z TypeScript’em. Pracuję zarówno nad frontendem, jak i backendem, a większość moich projektów realizuję samodzielnie, choć czasem współpracuję z innymi. Moje podejście do nauki jest praktyczne: zaczynam od podstaw, buduję proste projekty, a następnie stopniowo przechodzę do bardziej zaawansowanych tematów. Śledzę bieżące trendy i tematy, które mnie interesują, co pozwala mi na ciągły rozwój umiejętności. Rozwiązywanie problemów to moja mocna strona, a w mojej pracy stawiam na skuteczność i precyzję. Poza programowaniem pasjonuję się snowboardingiem, enduro i motorsportem. Te zainteresowania pomagają mi zachować równowagę i aktywność w życiu codziennym."
+  },
+  "Terminal": {
+    "help": "Dostępne komendy: \nopen [nazwa aplikacji] - otwiera określona aplikację \nskills - pokazuje moje umiejeści \nprojects - pokazuje moje projekty \nclear - czysci terminal",
+    "skills": "Moje umiejętności: React, Next.js, TypeScript, Node.js",
+    "projects": "Lista projektów: \n1. Portfolio MacOS \n2. Aplikacja zarządzania projektami",
+    "notFound": "Komenda nie znaleziona. Sproboj help."
   }
 }

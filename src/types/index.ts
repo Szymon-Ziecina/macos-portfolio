@@ -43,9 +43,53 @@ export type GithubUserType = {
   following: number;
 };
 
-export interface AppIconProps {
+export interface GithubRepoType {
+  id: number;
   name: string;
-  src: string;
+  html_url: string;
+  description: string | null;
+  language: string | null;
+}
+
+export interface AppIconProps {
+  name: { en: string; pl: string };
+  src?: string;
+  type?: "dock" | "desktop";
+  href?: string;
+  index?: number;
+  locale?: "en" | "pl";
+  isOpen?: boolean;
 }
 
 export type AppProps = string | undefined;
+
+export interface App {
+  name: { en: string; pl: string };
+  src: string;
+  href: string;
+  page:
+    | React.FC
+    | ((props: {
+        userRepos: GithubRepoType[];
+        userData: GithubUserType;
+      }) => JSX.Element);
+
+  sidebarElements?: {
+    name: { en: string; pl: string };
+    icon?: React.ReactNode;
+  }[];
+  customAspect?: boolean;
+}
+
+export interface SidebarElementProps {
+  name: {
+    en: string;
+    pl: string;
+  };
+  icon?: string;
+}
+
+export interface Command {
+  input: string;
+  output: string;
+}

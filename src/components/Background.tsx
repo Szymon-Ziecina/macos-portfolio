@@ -8,6 +8,7 @@ const Background = () => {
 
   return (
     <Image
+      draggable={false}
       src={wallpaper}
       alt="Background"
       fill

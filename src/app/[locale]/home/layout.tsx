@@ -1,15 +1,17 @@
+import Desktop from "@/components/interface/Desktop";
 import Dock from "@/components/interface/Dock";
-import { AppProps } from "@/types";
 
-export default async function LocaleLayout({
+export default function DesktopLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="h-full flex flex-col items-center justify-between">
-      <div></div>
-      {children}
+    <div className="h-full relative flex flex-col items-center justify-between">
+      <div className="h-full w-full flex flex-col items-center justify-center m-2">
+        <Desktop />
+        {children}
+      </div>
       <Dock />
     </div>
   );

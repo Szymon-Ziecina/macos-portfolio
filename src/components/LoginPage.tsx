@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 import { LoginPageProps } from "@/types";
 import Image from "next/image";
-import Clock from "./widgets/Clock";
+import Clock from "./interface/Clock";
 
 const LoginPage = ({ avatar, name, locale }: LoginPageProps) => {
   const t = useTranslations("LoginPage");
@@ -35,6 +35,7 @@ const LoginPage = ({ avatar, name, locale }: LoginPageProps) => {
           className="bg-white/30 backdrop-blur-md rounded-full focus:outline-none px-2 py-1 text-base text-white placeholder-white/70 shadow-inner"
           placeholder={t("loginPlaceholder")}
         />
+        <p className="text-sm text-white/70">{t("passwordInfo")}</p>
       </form>
     </div>
   );
