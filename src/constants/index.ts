@@ -1,11 +1,4 @@
-import {
-  Calculator,
-  Finder,
-  Mail,
-  Pages,
-  Safari,
-  Terminal,
-} from "@/components/apps";
+import dynamic from "next/dynamic";
 
 export const wallpapersList = [
   {
@@ -98,26 +91,34 @@ export const appsList = [
     name: { en: "store", pl: "sklep" },
     src: "/images/2048.png",
     href: "",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
   },
   {
     name: { en: "safari", pl: "safari" },
     src: "/images/Safari.png",
     href: "safari",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
   },
   {
     name: { en: "About me", pl: "O mnie" },
     src: "/images/Pages.png",
     href: "pages",
-    page: Pages,
+    page: dynamic(() => import("@/components/apps/Pages"), {
+      ssr: false,
+    }),
     customAspect: true,
   },
   {
     name: { en: "mail", pl: "mail" },
     src: "/images/Mail.png",
     href: "mail",
-    page: Mail,
+    page: dynamic(() => import("@/components/apps/Mail"), {
+      ssr: false,
+    }),
     sidebarElements: [
       {
         name: { en: "favourites", pl: "ulubione" },
@@ -145,19 +146,17 @@ export const appsList = [
     name: { en: "terminal", pl: "terminal" },
     src: "/images/Terminal.png",
     href: "terminal",
-    page: Terminal,
-  },
-  {
-    name: { en: "settings", pl: "ustawienia" },
-    src: "/images/Settings.png",
-    href: "settings",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Terminal"), {
+      ssr: false,
+    }),
   },
   {
     name: { en: "projects", pl: "projekty" },
     src: "/images/Folder.png",
     href: "finder",
-    page: Finder,
+    page: dynamic(() => import("@/components/apps/Finder"), {
+      ssr: false,
+    }),
     sidebarElements: [
       {
         name: { en: "favourites", pl: "ulubione" },
@@ -200,28 +199,36 @@ export const appsList = [
     name: { en: "CV", pl: "CV" },
     src: "/images/Acrobat.png",
     href: "acrobat",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
     customAspect: true,
   },
   {
     name: { en: "Calculator", pl: "Kalkulator" },
     src: "/images/Calculator.png",
     href: "calculator",
-    page: Calculator,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
     customAspect: true,
   },
   {
     name: { en: "TicTacToe", pl: "TicTacToe" },
     src: "/images/TicTacToe.png",
     href: "tictactoe",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
     customAspect: true,
   },
   {
     name: { en: "2048", pl: "2048" },
     src: "/images/2048.png",
     href: "2048",
-    page: Safari,
+    page: dynamic(() => import("@/components/apps/Safari"), {
+      ssr: false,
+    }),
     customAspect: true,
   },
 ];

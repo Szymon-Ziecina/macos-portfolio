@@ -38,7 +38,7 @@ const Window = ({
 
   if (!app) app = appsList[0];
 
-  const { name, src, href, page: Page, sidebarElements, customAspect } = app;
+  const { name, page: Page, sidebarElements, customAspect } = app;
 
   const hasSidebar = sidebarElements;
 
@@ -63,18 +63,22 @@ const Window = ({
       <div className="flex flex-col h-full w-full">
         <nav
           ref={navRef}
-          className={cn(
-            "flex bg-gray-100 w-full p-3",
-            hasSidebar ? "gap-4" : "justify-between"
-          )}
+          className="relative flex bg-gray-100 w-full p-3 gap-4"
         >
           <div className="flex items-center gap-5 text-gray-500">
             {!hasSidebar && <WindowControls />}
           </div>
-          <p className="font-semibold ml-4">{app?.name[locale].capitalize()}</p>
-          <div className="w-32"></div>
+          <p
+            className={cn(
+              "font-semibold ml-4",
+              !hasSidebar &&
+                "absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            )}
+          >
+            {app?.name[locale].capitalize()}
+          </p>
         </nav>
-        <main className="h-full">
+        <main className="h-full bg-white min-w-72 min-h-96">
           <Page userRepos={userRepos} userData={userData} />
         </main>
       </div>

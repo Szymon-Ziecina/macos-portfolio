@@ -13,7 +13,7 @@ const Clock = ({ variant, locale }: ClockProps) => {
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [locale, setTime]);
 
   if (variant === "big") {
     return <BigClock time={time} />;

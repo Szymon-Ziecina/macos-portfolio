@@ -41,7 +41,7 @@ const Terminal = () => {
         commandRef.current.value = "";
         return;
       }
-      let output = handleCommand(input);
+      const output = handleCommand(input);
       setCommands([...commands, { input, output }]);
       commandRef.current.value = "";
     }

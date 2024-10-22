@@ -1,5 +1,5 @@
-import Window from "@/components/interface/Window";
 import { fetchGithubRepos, fetchGithubUser } from "@/lib/actions/user.action";
+import Window from "@/components/interface/Window";
 
 const app = async () => {
   const user = await fetchGithubUser("Szymon-Ziecina");

@@ -134,7 +134,14 @@ const Spotlight = ({ locale }: { locale: "en" | "pl" }) => {
         app.name[locale].toLowerCase().includes(searchTerm)
       );
       if (inputRef.current.value === "") setMatchingApps([]);
-      else setMatchingApps(filteredApps);
+      else {
+        setMatchingApps(
+          filteredApps.map((app) => ({
+            ...app,
+            page: React.memo(app.page),
+          }))
+        );
+      }
     }
   };
 

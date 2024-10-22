@@ -1,5 +1,8 @@
-import Desktop from "@/components/interface/Desktop";
 import Dock from "@/components/interface/Dock";
+import dynamic from "next/dynamic";
+const Desktop = dynamic(() => import("@/components/interface/Desktop"), {
+  ssr: false,
+});
 
 export default function DesktopLayout({
   children,
