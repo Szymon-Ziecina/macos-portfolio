@@ -76,6 +76,9 @@ const DockAppIcon = ({ isOpen, name, src, locale, href }: AppIconProps) => (
       width={64}
       height={64}
     />
+    {isOpen && (
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-black rounded-full" />
+    )}
   </Link>
 );
 

@@ -113,16 +113,13 @@ export const appsList = [
     customAspect: true,
   },
   {
-    name: { en: "mail", pl: "mail" },
+    name: { en: "inbox", pl: "odebrane" },
     src: "/images/Mail.png",
     href: "mail",
     page: dynamic(() => import("@/components/apps/Mail"), {
       ssr: false,
     }),
     sidebarElements: [
-      {
-        name: { en: "favourites", pl: "ulubione" },
-      },
       {
         name: { en: "inbox", pl: "odebrane" },
         icon: "/icons/Inbox.svg",
@@ -158,9 +155,6 @@ export const appsList = [
       ssr: false,
     }),
     sidebarElements: [
-      {
-        name: { en: "favourites", pl: "ulubione" },
-      },
       {
         name: { en: "ariDrop", pl: "ariDrop" },
         icon: "/icons/AirDrop.svg",

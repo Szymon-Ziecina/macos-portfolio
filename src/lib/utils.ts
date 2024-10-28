@@ -83,5 +83,4 @@ String.prototype.capitalize = function (): string {
     .join(" ");
 };
 
-// Export an empty object to ensure this file is treated as a module
 export {};

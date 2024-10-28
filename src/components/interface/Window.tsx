@@ -1,30 +1,23 @@
 "use client";
 
-import { appsList } from "@/constants";
 import useDraggable from "@/lib/hooks/useDraggable";
-import {
-  AppProps,
-  GithubRepoType,
-  GithubUserType,
-  SidebarElementProps,
-} from "@/types";
-import { useParams } from "next/navigation";
-import { useRef } from "react";
+import { ReactNode, useRef } from "react";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 
 const Window = ({
-  userRepos,
-  userData,
+  locale,
+  name,
+  sidebar,
+  customAspect,
+  children,
 }: {
-  userRepos: GithubRepoType[];
-  userData: GithubUserType;
+  locale: "en" | "pl";
+  name: { en: string; pl: string };
+  sidebar?: ReactNode;
+  customAspect?: boolean;
+  children: ReactNode;
 }) => {
-  const { locale, app: appHref } = useParams() as {
-    locale: "en" | "pl";
-    app: AppProps;
-  };
   const windowRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const { position, handleMouseDown } = useDraggable(
@@ -33,14 +26,6 @@ const Window = ({
     windowRef,
     navRef
   );
-
-  let app = appsList.find((appName) => appName.href === appHref);
-
-  if (!app) app = appsList[0];
-
-  const { name, page: Page, sidebarElements, customAspect } = app;
-
-  const hasSidebar = sidebarElements;
 
   return (
     <div
@@ -53,34 +38,26 @@ const Window = ({
         customAspect && "aspect-auto"
       )}
     >
-      {hasSidebar && (
-        <Sidebar
-          sidebarElements={sidebarElements}
-          locale={locale}
-          name={name}
-        />
-      )}
+      {sidebar && <Sidebar sidebar={sidebar} />}
       <div className="flex flex-col h-full w-full">
         <nav
           ref={navRef}
           className="relative flex bg-gray-100 w-full p-3 gap-4"
         >
           <div className="flex items-center gap-5 text-gray-500">
-            {!hasSidebar && <WindowControls />}
+            {!sidebar && <WindowControls />}
           </div>
           <p
             className={cn(
               "font-semibold ml-4",
-              !hasSidebar &&
+              !sidebar &&
                 "absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
             )}
           >
-            {app?.name[locale].capitalize()}
+            {name[locale].capitalize()}
           </p>
         </nav>
-        <main className="h-full bg-white min-w-72 min-h-96">
-          <Page userRepos={userRepos} userData={userData} />
-        </main>
+        <main className="h-full bg-white min-w-72 min-h-96">{children}</main>
       </div>
     </div>
   );
@@ -88,15 +65,7 @@ const Window = ({
 
 export default Window;
 
-function Sidebar({
-  sidebarElements,
-  locale,
-  name,
-}: {
-  sidebarElements: SidebarElementProps[];
-  locale: "en" | "pl";
-  name: { en: string; pl: string };
-}) {
+function Sidebar({ sidebar }: { sidebar: ReactNode }) {
   return (
     <aside className="w-52 flex flex-col items-start pl-3 bg-white/80 backdrop-blur-lg border-r-2 border-gray-400/50">
       <div className="h-6 w-full flex items-center my-3">
@@ -104,25 +73,7 @@ function Sidebar({
       </div>
       <div className="w-full h-full overflow-y-auto text-black/50">
         <div className="w-full text-black mt-2 flex flex-col gap-1">
-          {sidebarElements.map((element) => (
-            <div
-              key={element.name[locale]}
-              className={cn(
-                "w-11/12 flex items-center gap-2 p-1 rounded-md",
-                element.name["en"] === name["en"] && "bg-black/10"
-              )}
-            >
-              {element.icon && (
-                <Image
-                  src={element.icon}
-                  alt={element.name[locale]}
-                  height={20}
-                  width={20}
-                />
-              )}
-              {element.name[locale].capitalize()}
-            </div>
-          ))}
+          {sidebar}
         </div>
       </div>
     </aside>

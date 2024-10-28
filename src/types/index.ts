@@ -81,12 +81,13 @@ export interface App {
   customAspect?: boolean;
 }
 
-export interface SidebarElementProps {
-  name: {
-    en: string;
-    pl: string;
-  };
+export interface SidebarElement {
+  name: { en: string; pl: string };
   icon?: string;
+}
+
+export interface SidebarElementProps {
+  sidebarElements?: SidebarElement[];
 }
 
 export interface Command {
