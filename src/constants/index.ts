@@ -2,12 +2,68 @@ import dynamic from "next/dynamic";
 
 export const wallpapersList = [
   {
-    name: "Sequoia Light",
-    src: "/wallpapers/Sequoia_light.jpg",
+    name: "Sequoia",
+    src: "/wallpapers/Sequoia_",
   },
   {
-    name: "Sequoia Dark",
-    src: "/wallpapers/Sequoia_dark.jpg",
+    name: "Rainbow",
+    src: "/wallpapers/Rainbow_",
+  },
+  {
+    name: "Macintosh Accent",
+    src: "/wallpapers/Macintosh_accent_",
+  },
+  {
+    name: "Macintosh Red",
+    src: "/wallpapers/Macintosh_red_",
+  },
+  {
+    name: "Macintosh Blue",
+    src: "/wallpapers/Macintosh_blue_",
+  },
+  {
+    name: "Macintosh Gray",
+    src: "/wallpapers/Macintosh_gray_",
+  },
+  {
+    name: "Macintosh Green",
+    src: "/wallpapers/Macintosh_green_",
+  },
+  {
+    name: "Macintosh Orange",
+    src: "/wallpapers/Macintosh_orange_",
+  },
+  {
+    name: "Macintosh Purple",
+    src: "/wallpapers/Macintosh_purple_",
+  },
+  {
+    name: "Sonoma",
+    src: "/wallpapers/Sonoma_",
+  },
+  {
+    name: "Ventura",
+    src: "/wallpapers/Ventura_",
+  },
+  {
+    name: "Monterey",
+    src: "/wallpapers/Monterey_",
+  },
+  {
+    name: "Big Sur",
+    src: "/wallpapers/BigSur_",
+  },
+  {
+    name: "Catalina",
+    src: "/wallpapers/Catalina_",
+  },
+  {
+    name: "Mojave",
+    src: "/wallpapers/Mojave_",
+  },
+  {
+    name: "High Sierra",
+    src: "/wallpapers/HighSierra_",
   },
 ];
 

@@ -1,8 +1,3 @@
-export enum WallpaperTypes {
-  SEQUOIA_LIGHT = "/wallpapers/Sequoia_light.jpg",
-  SEQUOIA_DARK = "/wallpapers/Sequoia_dark.jpg",
-}
-
 export interface NavbarProps {
   locale: "en" | "pl";
 }

@@ -4,6 +4,7 @@ import useDraggable from "@/lib/hooks/useDraggable";
 import { ReactNode, useRef } from "react";
 import { Link } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const Window = ({
   locale,
@@ -39,13 +40,25 @@ const Window = ({
       )}
     >
       {sidebar && <Sidebar sidebar={sidebar} />}
-      <div className="flex flex-col h-full w-full">
+      <div
+        className={cn(
+          "flex flex-col h-full ",
+          customAspect ? "w-auto" : "w-full"
+        )}
+      >
         <nav
           ref={navRef}
-          className="relative flex bg-gray-100 w-full p-3 gap-4"
+          className="relative flex bg-[#f2eeef] w-full p-3 gap-4"
         >
           <div className="flex items-center gap-5 text-gray-500">
-            {!sidebar && <WindowControls />}
+            {sidebar ? (
+              <>
+                <FaChevronLeft />
+                <FaChevronRight />
+              </>
+            ) : (
+              <WindowControls />
+            )}
           </div>
           <p
             className={cn(
@@ -57,7 +70,9 @@ const Window = ({
             {name[locale].capitalize()}
           </p>
         </nav>
-        <main className="h-full bg-white min-w-72 min-h-96">{children}</main>
+        <main className="h-full bg-[#f2eeef] min-w-72 min-h-96">
+          {children}
+        </main>
       </div>
     </div>
   );
