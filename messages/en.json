@@ -23,5 +23,17 @@
     "Shut": "Shut Down...",
     "Lock": "Lock Screen",
     "Logout": "Log Out"
+  },
+  "Mail": {
+    "title": "Contact Me",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "loading": "Sending",
+    "nameRequired": "Name is required",
+    "invalidEmail": "Invalid email address",
+    "messageRequired": "Message is required",
+    "messageMax": "Message can't exceed 500 characters"
   }
 }

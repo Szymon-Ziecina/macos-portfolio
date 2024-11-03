@@ -56,10 +56,7 @@ const Pages = ({ userData: user }: { userData: GithubUserType }) => {
     <>
       <nav className="flex items-center justify-between bg-snowflake border-b-2 border-gray-400/50 text-gray-600 px-3 w-[1024px]">
         {sections.map((section, index) => (
-          <section
-            key={section[index].text}
-            className="flex items-end gap-1 xl:gap-3"
-          >
+          <section key={index} className="flex items-end gap-1 xl:gap-3">
             {section.map((section) => (
               <NavIcon key={section.text}>
                 {section.icon}

@@ -135,11 +135,6 @@ export const DesktopApps = [
     src: "/images/TicTacToe.png",
     href: "tictactoe",
   },
-  {
-    name: { en: "2048", pl: "2048" },
-    src: "/images/2048.png",
-    href: "2048",
-  },
 ];
 
 export const appsList = [
@@ -264,19 +259,10 @@ export const appsList = [
     customAspect: true,
   },
   {
-    name: { en: "TicTacToe", pl: "TicTacToe" },
+    name: { en: "Tic Tac Toe", pl: "Tic Tac Toe" },
     src: "/images/TicTacToe.png",
     href: "tictactoe",
-    page: dynamic(() => import("@/components/apps/Safari"), {
-      ssr: false,
-    }),
-    customAspect: true,
-  },
-  {
-    name: { en: "2048", pl: "2048" },
-    src: "/images/2048.png",
-    href: "2048",
-    page: dynamic(() => import("@/components/apps/Safari"), {
+    page: dynamic(() => import("@/components/apps/TicTacToe"), {
       ssr: false,
     }),
     customAspect: true,

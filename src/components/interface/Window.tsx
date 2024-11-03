@@ -70,9 +70,7 @@ const Window = ({
             {name[locale].capitalize()}
           </p>
         </nav>
-        <main className="h-full bg-snowflake min-w-60 min-h-96">
-          {children}
-        </main>
+        <main className="h-full bg-snowflake min-w-60">{children}</main>
       </div>
     </div>
   );

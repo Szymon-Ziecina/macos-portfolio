@@ -23,5 +23,17 @@
     "Shut": "Wyłącz...",
     "Lock": "Ekran blokady",
     "Logout": "Wyloguj"
+  },
+  "Mail": {
+    "title": "Skontaktuj się ze mną",
+    "name": "Imie",
+    "email": "Email",
+    "message": "Wiadomość",
+    "send": "Wyslij",
+    "loading": "Wysyłanie",
+    "nameRequired": "Imie jest wymagane",
+    "invalidEmail": "Nieprawidłowy email",
+    "messageRequired": "Wiadomość jest wymagana",
+    "messageMax": "Wiadomość nie moze przekroczyc 500 znaków"
   }
 }
