@@ -6,7 +6,7 @@ import AppIcon from "./AppIcon";
 
 const Dock = () => {
   return (
-    <nav className="flex items-center bg-white/50 gap-1 p-1 mb-2 rounded-3xl">
+    <nav className="flex items-center bg-white/50 gap-1 p-1 mb-2 rounded-3xl z-50">
       {dockApps.map((app) => (
         <AppIcon
           key={app.src}
@@ -22,6 +22,8 @@ const Dock = () => {
         alt="Recycle Bin"
         width={64}
         height={64}
+        draggable={false}
+        className="z-50"
       />
     </nav>
   );

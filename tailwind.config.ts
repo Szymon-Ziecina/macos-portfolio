@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        snowflake: "#f2eeef",
         close: "#fe5f58",
         minimize: "#f6b923",
         maximize: "#1fc936",

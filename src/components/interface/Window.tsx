@@ -42,13 +42,13 @@ const Window = ({
       {sidebar && <Sidebar sidebar={sidebar} />}
       <div
         className={cn(
-          "flex flex-col h-full ",
+          "flex flex-col flex-1",
           customAspect ? "w-auto" : "w-full"
         )}
       >
         <nav
           ref={navRef}
-          className="relative flex bg-[#f2eeef] w-full p-3 gap-4"
+          className="relative flex bg-snowflake w-full p-3 gap-4"
         >
           <div className="flex items-center gap-5 text-gray-500">
             {sidebar ? (
@@ -70,7 +70,7 @@ const Window = ({
             {name[locale].capitalize()}
           </p>
         </nav>
-        <main className="h-full bg-[#f2eeef] min-w-72 min-h-96">
+        <main className="h-full bg-snowflake min-w-60 min-h-96">
           {children}
         </main>
       </div>
@@ -82,7 +82,7 @@ export default Window;
 
 function Sidebar({ sidebar }: { sidebar: ReactNode }) {
   return (
-    <aside className="w-52 flex flex-col items-start pl-3 bg-white/80 backdrop-blur-lg border-r-2 border-gray-400/50">
+    <aside className="w-52 flex flex-col items-start pl-3 bg-white/75 backdrop-blur border-r-2 border-gray-400/50">
       <div className="h-6 w-full flex items-center my-3">
         <WindowControls />
       </div>

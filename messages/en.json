@@ -12,5 +12,16 @@
     "skills": "My skills: React, Next.js, TypeScript, Node.js",
     "projects": "List of projects:\n1. Portfolio MacOS\n2. Project Management App",
     "notFound": "Command not found. Try help."
+  },
+  "Navbar": {
+    "About": "About This Mac",
+    "System": "System Preferences...",
+    "App": "App Store...",
+    "Recent": "Recent Items",
+    "Sleep": "Sleep",
+    "Restart": "Restart...",
+    "Shut": "Shut Down...",
+    "Lock": "Lock Screen",
+    "Logout": "Log Out"
   }
 }

@@ -11,6 +11,8 @@ import { App, AppProps } from "@/types";
 import { appsList, navItems } from "@/constants";
 import { useParams, useRouter } from "next/navigation";
 import useShortcut from "@/lib/hooks/useShortcut";
+import { useTranslations } from "next-intl";
+import { MdChevronRight } from "react-icons/md";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -62,7 +64,10 @@ const HomeNav = ({
   return (
     <>
       <div className="flex gap-5 items-center text-base">
-        <FaApple size={24} className="-mr-2" />
+        <div className="group relative flex items-center justify-center h-full px-3 -my-1 py-1 -mr-4  rounded-lg hover:bg-gray-400 transition-all duration-150">
+          <FaApple size={24} />
+          <Menu />
+        </div>
         <p>
           <span className="font-bold">
             {app === "settings" && locale === "pl"
@@ -81,6 +86,55 @@ const HomeNav = ({
         <Clock variant="small" />
       </div>
     </>
+  );
+};
+
+const Menu = () => {
+  const t = useTranslations("Navbar");
+  return (
+    <div className="p-2 group-hover:block hidden absolute w-[200px] -left-2 top-7 z-10">
+      <div className=" bg-snowflake border-2 border-white rounded-lg">
+        <div className="flex flex-col gap-1 p-2 text-sm">
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("About")}
+          </p>
+          <div className="w-full h-0.5 bg-black/15" />
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("System")}
+          </p>
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("App")}
+          </p>
+          <div className="w-full h-0.5 bg-black/15" />
+          <p className="w-full flex justify-between items-center px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("Recent")} <MdChevronRight size={20} />
+          </p>
+          <div className="w-full h-0.5 bg-black/15" />
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("Sleep")}
+          </p>
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("Restart")}
+          </p>
+          <p className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150">
+            {t("Shut")}
+          </p>
+          <div className="w-full h-0.5 bg-black/15" />
+          <Link
+            href="/"
+            className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150"
+          >
+            {t("Lock")}
+          </Link>
+          <Link
+            href="/"
+            className="w-full px-2 py-1 hover:bg-gray-300 rounded-lg transition-all duration-150"
+          >
+            {t("Logout")}
+          </Link>
+        </div>
+      </div>
+    </div>
   );
 };
 

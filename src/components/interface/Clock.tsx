@@ -2,24 +2,30 @@
 
 import { getCurrentTime } from "@/lib/utils";
 import { ClockProps, timeProps } from "@/types";
+import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 const Clock = ({ variant, locale }: ClockProps) => {
-  const [time, setTime] = useState(getCurrentTime(locale));
+  const [time, setTime] = useState<timeProps | null>(null);
 
   useEffect(() => {
+    // Set the initial time after the component mounts
+    setTime(getCurrentTime(locale));
+
     const interval = setInterval(() => {
       setTime(getCurrentTime(locale));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [locale, setTime]);
+  }, [locale]);
 
-  if (variant === "big") {
-    return <BigClock time={time} />;
-  } else {
-    return <SmallClock time={time} />;
-  }
+  if (!time) return <div className="w-20" />;
+
+  return variant === "big" ? (
+    <BigClock time={time} />
+  ) : (
+    <SmallClock time={time} />
+  );
 };
 
 const BigClock = ({ time }: { time: timeProps }) => {

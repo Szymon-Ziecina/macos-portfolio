@@ -12,5 +12,16 @@
     "skills": "Moje umiejętności: React, Next.js, TypeScript, Node.js",
     "projects": "Lista projektów: \n1. Portfolio MacOS \n2. Aplikacja zarządzania projektami",
     "notFound": "Komenda nie znaleziona. Sproboj help."
+  },
+  "Navbar": {
+    "About": "O tym Mac'u",
+    "System": "Preferencje Systemowe...",
+    "App": "App Store...",
+    "Recent": "Ostatnie Elementy",
+    "Sleep": "Uśpij",
+    "Restart": "Restartuj...",
+    "Shut": "Wyłącz...",
+    "Lock": "Ekran blokady",
+    "Logout": "Wyloguj"
   }
 }

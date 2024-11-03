@@ -258,7 +258,7 @@ export const appsList = [
     name: { en: "Calculator", pl: "Kalkulator" },
     src: "/images/Calculator.png",
     href: "calculator",
-    page: dynamic(() => import("@/components/apps/Safari"), {
+    page: dynamic(() => import("@/components/apps/Calculator"), {
       ssr: false,
     }),
     customAspect: true,
