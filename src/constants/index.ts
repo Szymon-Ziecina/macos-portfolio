@@ -170,6 +170,7 @@ export const appsList = [
     page: dynamic(() => import("@/components/apps/Mail"), {
       ssr: false,
     }),
+    customAspect: true,
     sidebarElements: [
       {
         name: { en: "inbox", pl: "odebrane" },

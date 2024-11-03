@@ -58,7 +58,10 @@ const Mail: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col p-6">
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="flex flex-col w-[592px] xl:w-[816px] p-6"
+    >
       <h1 className="text-3xl font-semibold mb-4">{t("title")}</h1>
       <div className="mb-4">
         <label className="block text-sm font-medium text-gray-700">

@@ -13,6 +13,7 @@ const Notifications = () => {
     <>
       {notifications.map((notification) => (
         <Notification
+          key={notification.title}
           removeNotification={removeNotification}
           notification={notification}
         />

@@ -28,7 +28,8 @@ import {
 import { PiFlower } from "react-icons/pi";
 import { AiFillSound } from "react-icons/ai";
 
-require("events").EventEmitter.defaultMaxListeners = 15;
+import { EventEmitter } from "events";
+EventEmitter.defaultMaxListeners = 15;
 
 const page = ({ params: { locale } }: { params: { locale: "en" | "pl" } }) => {
   const windowProps = {

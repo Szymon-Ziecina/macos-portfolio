@@ -13,7 +13,7 @@ const TicTacToe = () => {
   const handleClick = (number: number) => {
     if (cells[number] !== "" || winner) return;
 
-    let array = [...cells];
+    const array = [...cells];
     if (turn === "X") {
       array[number] = "X";
       setTurn("O");
@@ -26,7 +26,7 @@ const TicTacToe = () => {
   };
 
   const checkWinner = (array: string[]) => {
-    for (let combo in combos) {
+    for (const combo in combos) {
       combos[combo].forEach((pattern) => {
         if (
           array[pattern[0]] === "" ||

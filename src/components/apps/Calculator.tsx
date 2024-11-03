@@ -1,7 +1,6 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { p } from "framer-motion/client";
 import { useState } from "react";
 
 const Calculator = () => {

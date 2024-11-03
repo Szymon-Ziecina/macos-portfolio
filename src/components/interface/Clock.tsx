@@ -2,7 +2,6 @@
 
 import { getCurrentTime } from "@/lib/utils";
 import { ClockProps, timeProps } from "@/types";
-import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 const Clock = ({ variant, locale }: ClockProps) => {
